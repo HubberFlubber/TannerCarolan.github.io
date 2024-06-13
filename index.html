@@ -8,7 +8,7 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #1a1a2e; /* Dark background */
-        color: #e7e7de; /* Light text color */
+            color: #e7e7de; /* Light text color */
         text-align: center;
         padding-top: 20px;
     }
@@ -32,7 +32,7 @@
 // Set the dates we're counting down to and start date
 var countDownDate1 = new Date("July 19, 2024 00:00:00").getTime();
 var countDownDate2 = new Date("March 15, 2025 00:00:00").getTime();
-var startDate = new Date("January 1, 2020 00:00:00").getTime();
+var startDate = new Date("March 15, 2024 00:00:00").getTime(); // Adjust this to your actual start date
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -55,13 +55,12 @@ var x = setInterval(function() {
     var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
     var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
 
-    var yearsTogether = Math.floor(timeTogether / (1000 * 60 * 60 * 24 * 365));
-    var daysTogether = Math.floor((timeTogether % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+    var daysTogether = Math.floor(timeTogether / (1000 * 60 * 60 * 24));
     
     // Display the results in the elements with ids "timer1", "timer2", and "timer3"
     document.getElementById("timer1").innerHTML = "Countdown to July 19th: " + days1 + "d " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
-    document.getElementById("timer2").innerHTML = "Countdown to March 15th: " + days2 + "d " + hours2 + "h " + minutes2 + "m " + seconds2 + "s ";
-    document.getElementById("timer3").innerHTML = "We've been together: " + yearsTogether + " years and " + daysTogether + " days";
+    document.getElementById("timer2").innerHTML = "Countdown to Anniversary : " + days2 + "d " + hours2 + "h " + minutes2 + "m " + seconds2 + "s ";
+    document.getElementById("timer3").innerHTML = "We've been together: " + daysTogether + " days";
 }, 1000);
 </script>
 </body>
