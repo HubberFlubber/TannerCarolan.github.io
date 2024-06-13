@@ -29,7 +29,7 @@
 <script>
 // Set the dates we're counting down to
 var countDownDate1 = new Date("July 19, 2024 00:00:00").getTime();
-var countDownDate2 = new Date("March 15, 2024 00:00:00").getTime();
+var countDownDate2 = new Date("March 15, 2025 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -61,6 +61,7 @@ var x = setInterval(function() {
         document.getElementById("timer1").innerHTML = "It's time!";
     }
     if (distance2 < 0) {
+        clearInterval(x);
         document.getElementById("timer2").innerHTML = "It's time!";
     }
 }, 1000);
