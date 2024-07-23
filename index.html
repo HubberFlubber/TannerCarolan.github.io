@@ -30,7 +30,7 @@
 <div class="timer" id="timer3">Time We've Been Together:</div>
 <script>
 // Set the dates we're counting down to and start date
-var countDownDate1 = new Date("July 19, 2024 00:00:00").getTime();
+var countDownDate1 = new Date("August 15, 2024 00:00:00").getTime();
 var countDownDate2 = new Date("March 15, 2025 00:00:00").getTime();
 var startDate = new Date("March 15, 2024 00:00:00").getTime(); // Adjust this to your actual start date
 
@@ -58,7 +58,7 @@ var x = setInterval(function() {
     var daysTogether = Math.floor(timeTogether / (1000 * 60 * 60 * 24));
     
     // Display the results in the elements with ids "timer1", "timer2", and "timer3"
-    document.getElementById("timer1").innerHTML = "Countdown to July 19th: " + days1 + "d " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
+    document.getElementById("timer1").innerHTML = "Countdown to out next reunion: " + days1 + "d " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
     document.getElementById("timer2").innerHTML = "Countdown to Anniversary : " + days2 + "d " + hours2 + "h " + minutes2 + "m " + seconds2 + "s ";
     document.getElementById("timer3").innerHTML = "We've been together: " + daysTogether + " days";
 }, 1000);
