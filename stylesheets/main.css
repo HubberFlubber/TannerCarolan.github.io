@@ -1,10 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #3b3b3b; /* Dark background */
-  background-color: #; /* Dark background */
-  color: purple; /* purple text color */
+  color: light purple; /* purple text color */
   text-align: center;
-  padding-top: 20px;
+  padding-top: 1em;
 }
 .timer {
   font-size: 36px;
