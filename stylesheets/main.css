@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #a9a9a9; /* Dark background */
+  background-color: #3b3b3b; /* Dark background */
+  background-color: #; /* Dark background */
   color: purple; /* purple text color */
   text-align: center;
   padding-top: 20px;
@@ -9,7 +10,7 @@ body {
   font-size: 36px;
   margin-top: 20px;
   padding: 20px;
-  background-color: #1a1a2e; /* Dark background */
+  background-color: black; /* Dark background */
   color: #e7e7de; /* Light text color */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
