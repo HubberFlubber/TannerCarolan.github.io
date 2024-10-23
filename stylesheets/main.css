@@ -1,19 +1,18 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: lavender; /* Dark background */
-  color: light purple; /* purple text color */
-  text-align: center;
-  padding-top: 1em;
+    font-family: Arial, sans-serif;
+    background-color: #a32cc4; /* Dark background */
+    text-align: center;
+    padding-top: 1em;
 }
 .timer {
-  font-size: 36px;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: lavender; /* Dark background */
-  color: white; /* Light text color */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 36px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #a32cc4;
+     /* Light text color */
+    border-radius: 10px;
+    border: 4px black;
 }
 title{
-  color: white;
+    color: white;
 }
