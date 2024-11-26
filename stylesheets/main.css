@@ -23,3 +23,11 @@ body {
 title {
     color: #ffffff; /* Ensure the title text is white */
 }
+.image-container img {
+    max-width: 300px; /* Adjust this value to make the image larger */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and timers */
+    border-radius: 15px; /* Rounds the corners (increase value for more rounding) */
+    border: 2px solid #ffffff; /* Optional: Add a border around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
