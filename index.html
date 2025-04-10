@@ -1,78 +1,101 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtles</title>
     <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="icon" href="TurtleFaviconWinter.png" type="image/x-icon">
-
+    <link rel="icon" href="TurtleFavicon.webp" type="image/x-icon">
     <style>
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        @keyframes rain {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
         }
 
-        .image-container img {
-            max-width: 200px; /* Adjust the size of the image */
-            height: auto;
-            margin-right: 20px; /* Space between image and timers */
-        }
-
-        .timers-container {
-            text-align: left;
+        .raindrop {
+            position: absolute;
+            top: -10px;
+            font-size: 1.5em;
+            color: #00aaff;
+            animation: rain 10s linear infinite;
+            opacity: 0.5;
+            pointer-events: none;
         }
     </style>
 </head>
-    
+
 <body>
-    <h1>It's a Turtle Winter!</h1>
-    <div class="container">
-        <div class="image-container">
-            <img src="TurtleSImple.png" alt="Turtle Winter">
-        </div>
-        <div class="timers-container">
-            <div class="timer" id="timer1">Countdown to the next time we see each other!</div>
-            <div class="timer" id="timer2">Countdown to March 13th!</div>
-            <div class="timer" id="timer3">Time We've Been Together:</div>
-        </div>
+
+<h1>Spring is in the Air!</h1>
+<div class="container">
+    <div class="image-container">
+        <img src="SpringTurtle.png" alt="Turtle with Flowers or Umbrella">
     </div>
-    <script>
-        // Set the dates we're counting down to and start date
-        var countDownDate1 = new Date("February 7, 2025 00:15:00").getTime();
-        var countDownDate2 = new Date("March 13, 2025 00:00:00").getTime();
-        var startDate = new Date("March 13, 2024 00:00:00").getTime(); // Adjust this to your actual start date
+    <div class="timers-container">
+        <div class="timer" id="timer1">Countdown to the next time we see each other!</div>
+        <div class="timer" id="timer2">Countdown to March 13th!</div>
+        <div class="timer" id="timer3">Time We've Been Together:</div>
+    </div>
+</div>
 
-        // Update the count-down every 1 second
-        var x = setInterval(function() {
-            // Get today's date and time
-            var now = new Date().getTime();
+<script>
+    const createRaindrop = () => {
+        const drop = document.createElement("div");
+        drop.classList.add("raindrop");
+        drop.textContent = Math.random() > 0.5 ? "🌸" : "💧";
 
-            // Find the distance between now and the countdown dates
-            var distance1 = countDownDate1 - now;
-            var distance2 = countDownDate2 - now;
-            var timeTogether = now - startDate; // Time together calculation
+        const size = Math.random() * 1.5 + 1;
+        drop.style.fontSize = size + "em";
 
-            // Time calculations for days, hours, minutes, and seconds
-            var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
-            var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
+        const maxWidth = 98 - (size / 2);
+        const minWidth = 2 + (size / 2);
+        drop.style.left = `calc(${Math.random() * (maxWidth - minWidth) + minWidth}vw)`;
+        drop.style.animationDuration = Math.random() * 3 + 5 + "s";
 
-            var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
-            var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+        document.body.appendChild(drop);
 
-            var daysTogether = Math.floor(timeTogether / (1000 * 60 * 60 * 24));
+        const removalTime = parseFloat(drop.style.animationDuration) * 1000 * 0.75;
+        setTimeout(() => {
+            drop.remove();
+        }, removalTime);
+    };
 
-            // Display the results in the elements with ids "timer1", "timer2", and "timer3"
-            document.getElementById("timer1").innerHTML = "Countdown to our next reunion: " + days1 + "d " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
-            document.getElementById("timer2").innerHTML = "Countdown to Anniversary : " + days2 + "d " + hours2 + "h " + minutes2 + "m " + seconds2 + "s ";
-            document.getElementById("timer3").innerHTML = "We've been together: " + daysTogether + " days";
-        }, 1000);
-    </script>
+    setInterval(createRaindrop, 300);
+
+    var countDownDate1 = new Date("May 15, 2025 00:15:00").getTime();
+    var countDownDate2 = new Date("March 13, 2026 00:00:00").getTime();
+    var startDate = new Date("March 13, 2024 00:00:00").getTime();
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+
+        var distance1 = countDownDate1 - now;
+        var distance2 = countDownDate2 - now;
+        var timeTogether = now - startDate;
+
+        var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
+        var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
+
+        var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+        var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+
+        var daysTogether = Math.floor(timeTogether / (1000 * 60 * 60 * 24));
+
+        document.getElementById("timer1").innerHTML =
+            "When we see each other: " + days1 + "d " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
+        document.getElementById("timer2").innerHTML =
+            "Countdown to anniversary: " + days2 + "d " + hours2 + "h " + minutes2 + "m " + seconds2 + "s ";
+        document.getElementById("timer3").innerHTML =
+            "We've been together: " + daysTogether + " days";
+    }, 1000);
+</script>
 </body>
 </html>
